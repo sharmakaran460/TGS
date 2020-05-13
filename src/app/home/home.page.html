@@ -1,20 +1,62 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
+    <ion-title >
+ TGS
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <form ngForm="loginForm" (ngSubmit)="onSubmit()">
+          <ion-item>
+            <ion-label position="floating">name <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required name="name" type="text" [(ngModel)]="data.name" autocomplete="on"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Mobile-no <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required name="mobileno" type="number" [(ngModel)]="data.mobileno" autocomplete="on"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-item>
+              <ion-label>Select Time slot</ion-label>
+              <ion-select  placeholder="Select Time slot">
+                <ion-select-option value="1">07 Am-08 Am</ion-select-option>
+                <ion-select-option value="2">08 Am-09 am</ion-select-option>
+                <ion-select-option value="3">09 Am-10 am</ion-select-option>
+                <ion-select-option value="4">10 Am-11 am</ion-select-option>
+                <ion-select-option value="5">11 Am-12 noon</ion-select-option>
+                <ion-select-option value="6">01 pm-02 pm </ion-select-option>
+                <ion-select-option value="7">02 pm-03 pm </ion-select-option>
+                <ion-select-option value="6">03 pm-04 pm </ion-select-option>
+                <ion-select-option value="6">04 pm-05 pm </ion-select-option>
+                <ion-select-option value="6">05 pm-06 pm </ion-select-option>
+                <ion-select-option value="6">07 pm-08 pm </ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-item>
+          <ion-button block color="primary" type="submit">
+            Generate
+          </ion-button>
+        </form>
+        
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Token generated</ion-card-title>
+            <ion-card-subtitle>Please take a screenshot of this..</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+           <h1>{{data.token}}</h1>
+           <h2>{{data.name}}</h2>
+           <h2>{{data.timeslot}}</h2>
+          </ion-card-content>
+        </ion-card>
+        
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>

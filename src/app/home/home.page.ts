@@ -6,7 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
+  data: any = {};
   constructor() {}
 
+  onSubmit(){
+    console.log(this.data);
+  }
 }
